@@ -12,10 +12,13 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
+    private NameService NameService {get; set;}
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, NameService nameService)
     {
         _logger = logger;
+        NameService = nameService;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
