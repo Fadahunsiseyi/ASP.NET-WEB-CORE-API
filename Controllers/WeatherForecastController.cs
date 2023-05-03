@@ -32,4 +32,21 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+    [HttpPost(Name = "PostWeatherForecast")]
+    public async Task<IActionResult> Post() 
+    {
+        return Ok("Weather forecast has been sent");
+    }
+
+    [HttpPut(Name = "PutWeatherForecast")]
+    public async Task<IActionResult> Put(WeatherForecast weatherForecast) 
+    {
+        return Ok("Weather forecast has been updated");
+    }
+
+    [HttpDelete(Name = "DeleteWeatherForecast")]
+    public async Task<IActionResult> Delete(int id) 
+    {
+        return Ok("Weather forecast has been deleted");
+    }
 }
